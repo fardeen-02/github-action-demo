@@ -12,7 +12,7 @@ jobs:
       - name: use the secret
         run: echo "calling API using secret"
       - name: secret length
-        run: echo ${ #MY_API_KEY }
+        run: echo ${#MY_API_KEY}
         env:
           MY_API_KEY : ${{ secrets.API_KEY }}
         
