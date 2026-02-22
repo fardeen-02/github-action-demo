@@ -1,0 +1,16 @@
+name: Secret Example
+
+on: push
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: chekkout code
+        uses: actions/checkout@v4
+      - name: use the secret
+        run: echo "calling API using secret"
+        env:
+          MY_API_KEY : ${{ secrets.API_KEY }}
+        
