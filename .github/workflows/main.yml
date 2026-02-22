@@ -19,6 +19,8 @@ jobs:
       - name: create file using secret
         run: |
           echo "Secret length is ${#MY_API_KEY}" > output.txt
+        env:
+          MY_API_KEY : ${{ secrets.API_KEY}}
           
       - name: Upload file
         uses: actions/upload-artifact@v4
